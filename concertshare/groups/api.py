@@ -32,16 +32,16 @@ def get_event_info(artist, date_range):
     # Dates must be foormatted as YYYY-MM-DD,YYYY-MM-DD - the comma must turn into a '%2C' in the URL
     response = requests.get(f'https://rest.bandsintown.com/artists/{artist}/events?app_id={app_id}&date={date_range}')
     data = json.loads(response.content)
-    # TESTING HTML DISPLAY EVENT INFO BELOW
-    testhtml = '<table class="table table-dark">\n<thead>\n<tr>\n<th scope="col">#</th>'
+    # tableING HTML DISPLAY EVENT INFO BELOW
+    table_html = '<table class="table table-dark">\n<thead>\n<tr>\n<th scope="col">#</th>'
     event_keys = ['Line-up', 'Venue', 'Date', 'On sale', 'Tickets']
 
     for item in event_keys: # Top row
-        testhtml += f'<th scope="col">{item}</th>'
-    testhtml += '</tr>\n</thead>\n<tbody>'
+        table_html += f'<th scope="col">{item}</th>'
+    table_html += '</tr>\n</thead>\n<tbody>'
     event_num = 1
     for item in data[1:]: # Data rows
-        testhtml += f'''<tr><th scope="row">{event_num}</th>
+        table_html += f'''<tr><th scope="row">{event_num}</th>
         <td>{', '.join(item['lineup'])}</td>
         <td>{item['venue']['name']} in {item['venue']['city']}, {item['venue']['country']} ({item['venue']['region']})</td>
         <td>{item['datetime']}</td>
@@ -51,10 +51,10 @@ def get_event_info(artist, date_range):
         '''
         event_num += 1
     print(data[0].keys())
-    testfile = open('testtemplate.html').read()
-    testfile = testfile.replace('{content}', testhtml)
-    open('test.html', 'w').write(testfile)
-    # END TESTING CODE
+    table_file = open('tabletemplate.html').read()
+    table_file = table_file.replace('{content}', table_html)
+    open('table.html', 'w').write(table_file)
+    # END tableING CODE
     return(data)
 
 print(get_event_info('Drake', '2018-06-01,2019-08-01'))
