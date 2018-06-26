@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=concertshare
+POSTGRES_USER=hNhlurQamKhjUdMMnSpKXqNNOHAtgFII
+POSTGRES_PASSWORD=IY44eZgWJbxEcV6YTUiRpWQpP4evUo13UF3twfzqA5v69K47XUAPjJdFCMfL8heC
