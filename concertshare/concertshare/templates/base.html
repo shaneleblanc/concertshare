@@ -21,11 +21,17 @@
     <!-- Latest compiled and minified Bootstrap 4 beta CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="../../static/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
-    <!-- Your stuff: Third-party CSS libraries go here -->
+    <!-- Custom styles for this template -->
+    <link href="../../static/css/new-age.min.css" rel="stylesheet">
 
     <!-- This file stores project-specific CSS -->
-
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
 
 
@@ -34,16 +40,16 @@
   </head>
 
   <body>
-
+    <header class="masthead">
     <div class="m-b-1">
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="{% url 'home' %}">ConcertShare</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav ml-auto navbar">
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
@@ -76,23 +82,45 @@
           </ul>
         </div>
       </nav>
-
-
     </div>
-    {% block content %}
-      <!-- <p>Use this document as a way to quick start any new project.</p> -->
-    {% endblock content %}
 
-    <div class="container">
+    <header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-md-9 my-auto">
+            <!-- <div class="header-content mx-auto"> -->
+              {% block content %}
+              {% endblock content %}
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </header>
 
+    <!-- <div class="container">
       {% if messages %}
           {% for message in messages %}
               <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
           {% endfor %}
       {% endif %}
+    </div>  -->
 
-
-    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <p>&copy; ConcertShare 2018. All Rights Reserved.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="#">Privacy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Terms</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
 
     {% block modal %}{% endblock modal %}
 
@@ -107,10 +135,12 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
       <!-- Your stuff: Third-party javascript libraries go here -->
-
+      <script src="../../static/vendor/jquery/jquery.min.js"></script>
+      <script src="../../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
       <!-- place project specific Javascript in this file -->
-
+      <script src="../../static/vendor/jquery-easing/jquery.easing.min.js"></script>
+      <script src="js/new-age.min.js"></script>
       <script src="{% static 'js/project.js' %}"></script>
 
 
