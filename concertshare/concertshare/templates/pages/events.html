@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block content %}
+<table class="table table-dark">
+<thead>
+<tr>
+<th scope="col">#</th>
+{% for item in event_keys %}
+<th scope="col">{{item}}</th>
+{% endfor %}
+</tr>
+</thead>
+<tbody>
+{% for item in events %}
+<tr><th scope="row">{{item.number}}</th>
+  <td>{{item.lineup}}</td>
+  <td>{{item.venue.name}} in {{item.venue.city}}, {{item.venue.country}} ({{item.venue.region}})</td>
+  <td>{{ item.datetime|naturaltime }}</td>
+  <td>{{ item.on_sale_datetime|naturaltime }}</td>
+  <td><a href="{{item.url}}">Get tickets</a></td>
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}
