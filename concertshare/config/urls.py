@@ -7,11 +7,26 @@ from django.views import defaults as default_views
 from groups import views
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path("", TemplateView.as_view(template_name="pages/index.html"), name="index"),
+    path(
+        "your_artists/",
+        TemplateView.as_view(template_name="pages/your_artists.html"),
+        name="your_artists",
+    ),
+    path(
+        "home/",
+        TemplateView.as_view(template_name="pages/home.html"),
+        name="home",
+    ),
     path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),
         name="about",
+    ),
+    path(
+        "groups/",
+        TemplateView.as_view(template_name="pages/groups.html"),
+        name="groups",
     ),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
