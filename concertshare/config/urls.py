@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from groups import views
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/index.html"), name="index"),
@@ -36,6 +37,7 @@ urlpatterns = [
     ),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path("events/<artist>/<date_range>", views.event_list),
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
