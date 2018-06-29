@@ -6,7 +6,7 @@ import arrow
 from concertshare.users.models import User
 
 app_id = 'cce6519e13b087ac855b87610aeec854'
-# Create your views here.
+# Create your views here. 
 def homepage(request):
     return render(request, 'pages/home.html', {})
 
