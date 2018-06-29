@@ -56,6 +56,17 @@
               </li>
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
+<<<<<<< Updated upstream
+=======
+                <a class="nav-link" href="{% url 'groups' %}">{% trans "Your Groups" %}</a>
+              </li>
+              <li class="nav-item">
+                {# URL provided by django-allauth/account/urls.py #}
+                <a class="nav-link" href="{% url 'events' %}">{% trans "Your Events" %}</a>
+              </li>
+              <li class="nav-item">
+                {# URL provided by django-allauth/account/urls.py #}
+>>>>>>> Stashed changes
                 <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
               </li>
             {% else %}
