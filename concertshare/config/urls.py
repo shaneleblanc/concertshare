@@ -37,7 +37,7 @@ urlpatterns = [
     ),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
-    path("events/<artist>/<date_range>", views.event_list),
+    path("events/", views.event_list, name="events"),
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Artist(models.Model):
+    users = models.ManyToManyField(User)
     upcoming_count = models.IntegerField()
     id = models.IntegerField()
     url = models.CharField(maxlength=2083)
