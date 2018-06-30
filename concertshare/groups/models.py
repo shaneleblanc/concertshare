@@ -1,6 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class Group(models.Model):
+    users = models.ForeignKey(User, on_delete=models.CASCADE)
+    artists = models.ForeignKey(User.artists, on_delete=models.CASCADE)    
+
 class Artist(models.Model):
     users = models.ManyToManyField(User)
     upcoming_count = models.IntegerField()
