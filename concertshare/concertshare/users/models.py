@@ -8,6 +8,7 @@ class User(AbstractUser):
 
     # First Name and Last Name do not cover name patterns
     # around the globe.
+    
     name = models.CharField(_("Name of User"), blank=True, max_length=255)
     cities = models.CharField(_("Cities (Separate multiple cities by comma - no spaces)"), default="San Francisco", max_length=255)
     artists = models.TextField(_("Artists (Separate multiple artists by comma - spaces between artists)"), blank=True, max_length=25500)
@@ -19,3 +20,17 @@ class User(AbstractUser):
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
+
+class Group(models.Model):
+    name = models.CharField(_("Name of Group"), blank=True, max_length=255)
+    cities = models.CharField(_("Cities"), default="San Francisco", max_length=255)
+    artists = models.TextField(_("Artists"), blank=True, max_length=25500)
+    date_range = models.CharField(_("Date Range"), blank=True, max_length=48)
+    users = models.ManyToManyField(User)
+    
+
+    @classmethod
+    def create(cls, name):
+        group = cls(name=name)
+        # do something with the book
+        return group

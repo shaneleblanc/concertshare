@@ -24,9 +24,7 @@ urlpatterns = [
         name="about",
     ),
     path(
-        "groups/",
-        TemplateView.as_view(template_name="pages/groups.html"),
-        name="groups",
+        "groups/", views.group_list, name="groups",
     ),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
@@ -38,6 +36,8 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     path("events/", views.event_list, name="events"),
+    path("creategroup/", views.create_group, name="create_group"),
+
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
