@@ -19,3 +19,13 @@ nav a{
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
+
+.btn-primary{
+  background-color: Transparent !important;
+  color: #fff !important;
+  border: 1px solid !important;
+  border-color: #fff !important;
+}
+
+
+body form p.invalid_feedback { color: black !important; }
