@@ -9,9 +9,9 @@ class User(AbstractUser):
     # First Name and Last Name do not cover name patterns
     # around the globe.
     name = models.CharField(_("Name of User"), blank=True, max_length=255)
-    cities = models.CharField(_("Cities"), default="San Francisco", max_length=255) 
-    artists = models.TextField(_("Artists"), blank=True, max_length=25500)
-    date_range = models.CharField(_("Date Range"), blank=True, max_length=48)
+    cities = models.CharField(_("Cities (Separeate multiple  cities by comma)"), default="San Francisco", max_length=255)
+    artists = models.TextField(_("Artists (Separate multiple artists by comma)"), blank=True, max_length=25500)
+    date_range = models.CharField(_("Date Range (YYY-MM-DD,YYY-MM-DD)"), blank=True, max_length=48)
 
 
     def __str__(self):
