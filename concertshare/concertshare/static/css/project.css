@@ -19,3 +19,7 @@ nav a{
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
+
+button.btn-primary{
+  background-color: Transparent !important;
+}
